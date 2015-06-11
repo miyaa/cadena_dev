@@ -1,0 +1,33 @@
+{
+    "name": "common",
+    "description": "This is common",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+			"tz" : "Asia/Tokyo",
+			"httpd" : {
+				"port" : "80",
+				"docroot" : "/var/www/app/webroot"
+			},
+			"php" : {
+				"timezone" : "Asis/Tokyo"
+			},
+			"mariadb" : {
+				"server_root_password" : "krymFjt",
+				"server_repl_password" : "krymFjt",
+				"server_debian_password" : "krymFjt",
+				"version" : "10.0"
+			}
+
+    },
+    "override_attributes": {
+    },
+    "run_list": [
+        "recipe[timezone-ii::rhel]",
+        "recipe[yumupdate]",
+        "recipe[yum_repo]",
+				"recipe[base]",
+				"recipe[php56]",
+				"recipe[mariadb::server]"
+    ]
+}

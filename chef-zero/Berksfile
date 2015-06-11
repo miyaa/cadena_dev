@@ -1,0 +1,6 @@
+#source "https://supermarket.chef.io"
+site :opscode
+
+cookbook 'timezone-ii', git: "https://github.com/L2G/timezone-ii.git"
+cookbook 'mariadb', git: "https://github.com/joerocklin/chef-mariadb.git"
+#cookbook 'yumupdate', path: "site-cookbooks/yumupdate"

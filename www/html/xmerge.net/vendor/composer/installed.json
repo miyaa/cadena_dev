@@ -1,0 +1,32 @@
+[
+    {
+        "name": "codeigniter/framework",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bcit-ci/CodeIgniter.git",
+            "reference": "c0b2ae29b8a4c48c6adde72bc3f66ad3780246ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bcit-ci/CodeIgniter/zipball/c0b2ae29b8a4c48c6adde72bc3f66ad3780246ec",
+            "reference": "c0b2ae29b8a4c48c6adde72bc3f66ad3780246ec",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "1.1.*"
+        },
+        "time": "2015-03-31 08:50:46",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "The CodeIgniter framework"
+    }
+]
