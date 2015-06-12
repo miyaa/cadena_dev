@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.synced_folder "./www", "/var/www",create: true,  mount_options: ['dmode=777', 'fmode=666']
+  config.vm.synced_folder "./www", "/var/www",create: true,  mount_options: ['dmode=755', 'fmode=755']
   config.omnibus.chef_version=:latest
   #config.berkshelf.enabled = true
 
