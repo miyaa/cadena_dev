@@ -7,7 +7,7 @@
 			"tz" : "Asia/Tokyo",
 			"httpd" : {
 				"port" : "80",
-				"docroot" : "/var/www/app/webroot"
+				"docroot" : "/var/www/html/xmerge.net/public_html"
 			},
 			"php" : {
 				"timezone" : "Asis/Tokyo"
