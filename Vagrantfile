@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.synced_folder "./www", "/var/www",create: true,  mount_options: ['dmode=755', 'fmode=755']
+  config.vm.synced_folder "./www", "/var/www",create: true,  owner:'vagrant',  group:'apache',   mount_options: ['dmode=775', 'fmode=775']
   config.omnibus.chef_version=:latest
   #config.berkshelf.enabled = true
 
@@ -52,13 +52,13 @@ Vagrant.configure(2) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+    vb.memory = "1024"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
