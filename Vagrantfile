@@ -6,7 +6,8 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.synced_folder "./www", "/var/www",create: true,  owner:'vagrant',  group:'apache',   mount_options: ['dmode=775', 'fmode=775']
+  #config.vm.synced_folder "./www", "/var/www",create: true,  owner:'vagrant',  group:'apache',   mount_options: ['dmode=775', 'fmode=775']
+  config.vm.synced_folder "./www", "/var/www",create: true,   mount_options: ['dmode=775', 'fmode=775']
   config.omnibus.chef_version=:latest
   #config.berkshelf.enabled = true
 
@@ -16,13 +17,14 @@ Vagrant.configure(2) do |config|
     chef.roles_path = "chef-zero/roles"
     chef.add_role "common"
   end
+  config.vm.provision :shell,  :path => "./provision/bootstrap.sh", :privileged   => true
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "xmerge"
+  config.vm.box = "enami"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -35,7 +37,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.20"
+  config.vm.network "private_network", ip: "192.168.33.21"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
